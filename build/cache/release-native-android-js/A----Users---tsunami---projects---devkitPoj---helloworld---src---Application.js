@@ -1,0 +1,2 @@
+3071715324155e6466e9ae7f67969835
+jsio("import ui.TextView as TextView");var Users_tsunami_projects_devkitPoj_helloworld_src_Application=__class__;exports=Users_tsunami_projects_devkitPoj_helloworld_src_Application(function(){return this.init&&this.init.apply(this,arguments)},GC.Application,function(){this.initUI=function(){this.tvHelloWorld=new TextView({superview:this.view,text:"Hello, world!",color:"white",x:0,y:100,width:this.view.style.width,height:100})};this.launchUI=function(){}});
