@@ -3,7 +3,7 @@
   "dependencies": {
     "devkit-core": "https://github.com/gameclosure/devkit-core#v4.5.3"
   },
-  "shortName": "helloworld",
+  "shortName": "Bubble Shooter",
   "studio": {
     "domain": "studio.example.com",
     "name": "Your Studio Name",
@@ -13,5 +13,5 @@
     "portrait",
     "landscape"
   ],
-  "title": "BubbleShorter"
+  "title": "Bubble Shooter"
 }
