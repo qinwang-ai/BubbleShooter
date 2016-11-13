@@ -7,7 +7,8 @@ exports.bubble = {
         'resources/images/yellow.png',
         'resources/images/colorful.png'
     ],
-    radius:17
+    radius:17,
+    radius2:19.63
 };
 exports.globalSize = {
     width:320,

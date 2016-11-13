@@ -8,7 +8,6 @@ import animate;
 import src.Bullet as Bullet;
 import src.Gun as Gun;
 import src.SoundController as Sound;
-import src.Bubble as Bubble;
 exports = Class(ui.ImageView, function(supr){
     this.init = function(opts) {
         opts = merge(opts, {
@@ -86,10 +85,8 @@ function buildGun() {
 
 function buildBubbles() {
     this._bubbles = [];
-    var a = new Bubble();
+    var a = new Bullet({x:100, y:200});
     this._bubbles.push(a);
-    a.style.x = 100;
-    a.style.y = 200;
     this.addSubview(a);
 }
 function update() {
@@ -98,11 +95,7 @@ function update() {
             this._gun.update();
         }
         for(var i in this._bubbles){
-            var o = this._bubbles[i];
-           if(!o.update(this._gun)){
-               var index = this._bubbles.indexOf(o);
-               this._bubbles.splice(index);
-           }
+            this._bubbles[i].updateNormalBubble(this._gun);
         }
     }));
 }

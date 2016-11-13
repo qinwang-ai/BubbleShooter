@@ -71,10 +71,9 @@ exports = Class(ui.ImageView, function(supr){
         });
     }
     this.update = function(){
-        if (this._bullet){
-            if(!this._bullet.update()){
+        if (this._bullet && this._bullet._flying){
+            if(!this._bullet.updateFlyingBullet()){
                 // bullet is out of date, need load new one
-                this._bullet = null;
                 this.emit('gun:loaded');
             }
         }
