@@ -8,6 +8,7 @@ import animate;
 import src.Bullet as Bullet;
 import src.Gun as Gun;
 import src.SoundController as Sound;
+import src.Bubble as Bubble;
 exports = Class(ui.ImageView, function(supr){
     this.init = function(opts) {
         opts = merge(opts, {
@@ -67,7 +68,8 @@ function play_game() {
         this.emit('gamescreen:end');
     }));
     buildGun.call(this);
-    listenEvent.call(this);
+    buildBubbles.call(this);
+    update.call(this);
 }
 function buildGun() {
     var gun = new Gun();
@@ -81,10 +83,26 @@ function buildGun() {
         gun.emit('gun:fire', p);
     });
 }
-function listenEvent() {
+
+function buildBubbles() {
+    this._bubbles = [];
+    var a = new Bubble();
+    this._bubbles.push(a);
+    a.style.x = 100;
+    a.style.y = 200;
+    this.addSubview(a);
+}
+function update() {
     GC.app.engine.on('Tick', bind(this, function (dt) {
         if (this._gun) {
             this._gun.update();
+        }
+        for(var i in this._bubbles){
+            var o = this._bubbles[i];
+           if(!o.update(this._gun)){
+               var index = this._bubbles.indexOf(o);
+               this._bubbles.splice(index);
+           }
         }
     }));
 }

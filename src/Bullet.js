@@ -5,18 +5,20 @@ import src.SoundController as Sound;
 exports = Class(ui.ImageView, function(supr){
         this.init = function(opts) {
             opts = merge(opts, {
-                x:145,
-                y:510,
+                x:162,
+                y:527,
                 width: 34,
                 height:34,
-                image: "resources/images/bubble.png",
+                offsetX:-17,
+                offsetY:-17
             });
             supr(this, 'init', [opts]);
             this._deviceWidth = 320;
             this._magnLength = 1000;
-            this._delay = 600;
+            this._delay = 800;
             this._sound = Sound.getSound();
             this._origin = new Point(this.style.x, this.style.y);
+            this._type = opts.type;
             this.build();
         }
         this.build = function() {
@@ -50,8 +52,10 @@ exports = Class(ui.ImageView, function(supr){
                 }
                 return true;
             } else {
+                this.removeFromSuperview();
                 return false;
             }
+
         };
         this.magnitudeLength = function (target) {
             var origin = this._origin;
@@ -62,3 +66,4 @@ exports = Class(ui.ImageView, function(supr){
             return target;
         }
 });
+
