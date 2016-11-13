@@ -3,14 +3,14 @@ import device;
 import ui.StackView as StackView;
 import src.TitleScreen as TitleScreen;
 import src.GameScreen as GameScreen;
-import src.SoundController as SoundController;
+import src.SoundController as Sound;
 
 exports = Class(GC.Application, function () {
 
   this.initUI = function () {
       var titleScreen = new TitleScreen(),
           gameScreen = new GameScreen(),
-         // sound = SoundController.getSound(),
+            sound = Sound.getSound(),
           rootView = new StackView({
               superview:this,
               x:0,
@@ -21,12 +21,16 @@ exports = Class(GC.Application, function () {
               scale:device.width / 320
           });
       rootView.push(titleScreen);
+      sound.play('main_music');
       titleScreen.on("titlescreen:start", function() {
+          sound.stop('main_music');
           rootView.push(gameScreen);
           gameScreen.emit('app:start');
       });
       gameScreen.on('gamescreen:end', function() {
+          sound.stop('bg_music');
           rootView.pop();
+          sound.play('main_music');
       });
 
   };
