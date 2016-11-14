@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="892706aa-9501-4ee9-8142-3e1c1a3e457b" name="Default" comment="kkk">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/blue.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/blue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/colorful.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/colorful.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/green.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/green.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/red.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/red.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/yellow.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/yellow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/blue.png" afterPath="$PROJECT_DIR$/resources/images/blue.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/colorful.png" afterPath="$PROJECT_DIR$/resources/images/colorful.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/green.png" afterPath="$PROJECT_DIR$/resources/images/green.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/red.png" afterPath="$PROJECT_DIR$/resources/images/red.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/yellow.png" afterPath="$PROJECT_DIR$/resources/images/yellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/purple.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/purple.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/purple.png" afterPath="$PROJECT_DIR$/resources/images/purple.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/index.html" afterPath="$PROJECT_DIR$/build/debug/simulator/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" afterPath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/spritesheets/spritesheetSizeMap.json" afterPath="$PROJECT_DIR$/build/debug/simulator/spritesheets/spritesheetSizeMap.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.js" afterPath="$PROJECT_DIR$/src/Application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bullet.js" afterPath="$PROJECT_DIR$/src/Bullet.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Config.js" afterPath="$PROJECT_DIR$/src/Config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameScreen.js" afterPath="$PROJECT_DIR$/src/GameScreen.js" />
@@ -42,11 +34,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Gun.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gun.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+            <state relative-caret-position="308">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding>
                 <element signature="e#54#69#0" expanded="true" />
               </folding>
@@ -57,8 +59,8 @@
       <file leaf-file-name="Bullet.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Bullet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+            <state relative-caret-position="952">
+              <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
               <folding>
                 <element signature="e#54#69#0" expanded="true" />
               </folding>
@@ -69,8 +71,8 @@
       <file leaf-file-name="GameScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+            <state relative-caret-position="308">
+              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
               <folding>
                 <element signature="e#102#117#0" expanded="true" />
               </folding>
@@ -78,41 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SoundController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SoundController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+            <state relative-caret-position="168">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding>
                 <element signature="e#32#46#0" expanded="true" />
               </folding>
@@ -148,15 +120,15 @@
         <option value="$PROJECT_DIR$/src/soundController.js" />
         <option value="$PROJECT_DIR$/src/TitleScreen" />
         <option value="$PROJECT_DIR$/Bullet.js" />
-        <option value="$PROJECT_DIR$/src/Application.js" />
         <option value="$PROJECT_DIR$/src/TitleScreen.js" />
         <option value="$PROJECT_DIR$/src/SoundController.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/Bubble.js" />
-        <option value="$PROJECT_DIR$/src/GameScreen.js" />
+        <option value="$PROJECT_DIR$/src/Application.js" />
         <option value="$PROJECT_DIR$/src/Gun.js" />
         <option value="$PROJECT_DIR$/src/Config.js" />
+        <option value="$PROJECT_DIR$/src/GameScreen.js" />
         <option value="$PROJECT_DIR$/src/Bullet.js" />
       </list>
     </option>
@@ -233,52 +205,7 @@
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BubbleShooter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -293,7 +220,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="bull&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Bullet.js&#10;bulet&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/GameScreen.js&#10;applic&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Application.js&#10;bullet&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Bullet.js&#10;sound&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/SoundController.js" />
+    <property name="SearchEverywhereHistoryKey" value="config&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Config.js&#10;bull&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Bullet.js&#10;bulet&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/GameScreen.js&#10;applic&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Application.js&#10;bullet&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/Bullet.js&#10;sound&#9;FILE&#9;file:///Users/tsunami/projects/devkitPoj/BubbleShooter/src/SoundController.js" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -370,24 +297,24 @@
       <option name="presentableId" value="Default" />
       <updated>1478936681262</updated>
       <workItem from="1478936683887" duration="59869000" />
-      <workItem from="1479043975361" duration="18322000" />
+      <workItem from="1479043975361" duration="61556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78191000" />
+    <option name="totallyTimeSpent" value="121425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="156" y="-1400" width="1050" height="1400" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13994169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08739708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18721804" sideWeight="0.50340134" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22857143" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09689677" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18721804" sideWeight="0.49659863" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -491,13 +418,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#89#104#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TitleScreen" />
+    <entry file="file://$PROJECT_DIR$/src/Bubble.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SoundController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TitleScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -514,66 +463,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SoundController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bubble.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#89#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gun.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-          <folding>
-            <element signature="e#54#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
-          <folding>
-            <element signature="e#102#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+        <state relative-caret-position="168">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding>
             <element signature="e#32#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gun.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding>
+            <element signature="e#54#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="196">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding>
+            <element signature="e#102#117#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bullet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        <state relative-caret-position="952">
+          <caret line="113" column="74" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
           <folding>
             <element signature="e#54#69#0" expanded="true" />
           </folding>

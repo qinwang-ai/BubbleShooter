@@ -4,6 +4,7 @@ import ui.StackView as StackView;
 import src.TitleScreen as TitleScreen;
 import src.GameScreen as GameScreen;
 import src.SoundController as Sound;
+import src.Config as config;
 
 exports = Class(GC.Application, function () {
 
@@ -15,10 +16,10 @@ exports = Class(GC.Application, function () {
               superview:this,
               x:0,
               y:0,
-              width:320,
+              width:config.globalSize.width,
               height:680,
               clip:true,
-              scale:device.width / 320
+              scale:device.width / config.globalSize.width
           });
       rootView.push(titleScreen);
       sound.play('main_music');
