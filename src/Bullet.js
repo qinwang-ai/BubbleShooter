@@ -73,6 +73,10 @@ exports = Class(ui.ImageView, function(supr){
             if (distance <= r * 2) {
                 // stop
                 bullet._animate.clear();
+                if (this._type == config.keyType) {
+                    this.getSuperview().emit('gamescreen:end', 0);
+                    return;
+                }
                 // adjust position
                 this.deployBulletAfterHit(v1.getAngle(), bullet);
                 this._sound.play('attack');

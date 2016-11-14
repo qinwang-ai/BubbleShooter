@@ -14,7 +14,9 @@ exports.globalSize = {
     width: 330,
     height: 680
 }
+exports.keyType = 5;
 exports.bias = 1;
+exports.initBubbleAreaHeight = 0.1;
 exports.Hexagon = [
     {s: 0, t: 1.0472},
     {s: 1.0473, t: 2.0943},

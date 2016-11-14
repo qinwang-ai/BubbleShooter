@@ -118,7 +118,7 @@ function buildInitBubbles() {
     var bias = 5;
     var key = Math.floor(Math.random() * 6) + 1;
     var k = 0;
-    for (var _y = r; _y<= config.globalSize.height * 0.3; _y += 2*r) {
+    for (var _y = r; _y<= config.globalSize.height * config.initBubbleAreaHeight; _y += 2*r) {
         for (var _x = r2; _x<= config.globalSize.width - r2 + bias; _x += 3*r2) {
             var color = (++k == key) ? 5 : Math.floor(Math.random() * 5)
             var bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
@@ -126,7 +126,7 @@ function buildInitBubbles() {
         }
     }
     for (var _x = 2.5*r2; _x<= config.globalSize.width - 2.5 * r2 + bias; _x += 3*r2) {
-        for (var _y = 2*r; _y<= config.globalSize.height * 0.3; _y += 2*r) {
+        for (var _y = 2*r; _y<= config.globalSize.height * config.initBubbleAreaHeight; _y += 2*r) {
             var color = Math.floor(Math.random() * 5);
             var bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
             this._bubbles[bubble.uid] = bubble;
