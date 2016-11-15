@@ -7,70 +7,93 @@ import ui.TextView;
 import animate;
 import src.Bullet as Bullet;
 import src.Gun as Gun;
-import src.SoundController as Sound;
+import src.SoundController as sound;
 import src.Config as config;
 import math.geom.Point as Point;
+import ui.ParticleEngine as ParticleEngine;
+
 exports = Class(ui.ImageView, function(supr){
     this.init = function(opts) {
         opts = merge(opts, {
             x:0,
-            width:config.globalSize.width,
-            height:config.globalSize.width,
+            y:0,
+            width:GLOBAL.SCREEN_SIZE.width,
+            height:GLOBAL.SCREEN_SIZE.height,
             image: 'resources/images/background_1.jpg',
         });
         supr(this, 'init', [opts]);
+        this._bubbles = {};
+        this._sound = sound.getSound();
+        this._gun = null;
+        this._timeBoard = null;
+        this._keyPosition = null;
         this.build();
     }
     this.build = function() {
-        this.on('app:start', start_game_flow.bind(this));
-        this._sound = Sound.getSound();
-        this._scoreboard = new ui.TextView({
-            superview: this,
-            x: 0,
-            y: 15,
-            width: config.globalSize.width,
-            height: 50,
-            autoSize: false,
-            size: 38,
-            verticalAlign: 'middle',
-            horizontalAlign: 'center',
-            wrap: false,
-            color: '#FFFFFF'
+        buildGun.call(this);
+        this.on('app:start', startGameFlow.bind(this));
+        this.on('app:end', endGameFlow.bind(this));
+        checkEachFrame.call(this);
+        this._perfect = new ui.ImageView({
+            superview:this,
+            x:GLOBAL.SCREEN_SIZE.width/2,
+            y:GLOBAL.SCREEN_SIZE.height/2,
+            image:'resources/images/perfect.png',
+            width:260,
+            height:61,
+            offsetX:-130,
+            offsetY:-30,
+            visible:false
         });
+        this._great = new ui.ImageView(merge({
+            image:'resources/images/great.png',
+            width:198,
+            height:58,
+            offsetX:-99,
+            offsetY:-29,
+        },this._perfect._opts));
+        this._nice = new ui.ImageView(merge({
+            image:'resources/images/nice.png',
+            width:138,
+            height:57,
+            offsetX:-69,
+            offsetY:-28.5,
+        },this._perfect._opts));
     }
-
 });
-function start_game_flow () {
+function startGameFlow () {
     var that = this;
-    // Ready go
-    animate(this._scoreboard).wait(1000)
+    var readyBoard = new ui.TextView({
+        superview: this,
+        fontFamily:'Comic Sans MS',
+        x: 0,
+        y: 15,
+        width: GLOBAL.SCREEN_SIZE.width,
+        height: 50,
+        autoSize: false,
+        size: 38,
+        verticalAlign: 'middle',
+        horizontalAlign: 'center',
+        wrap: false,
+        color: '#fffc88'
+    });
+    that._sound.stop('main_music');
+    animate(readyBoard).wait(1000)
         .then(function () {
-            that._scoreboard.setText("Ready");
+            readyBoard.setText("Ready...");
             that._sound.play('start_ready');
         }).wait(1000).then(function () {
-            that._scoreboard.setText("GO");
+            readyBoard.setText("Go!");
             that._sound.play('start_go');
         }).wait(1000).then(function(){
-        that._scoreboard.setText("Score:0");
         that._sound.play('bg_music');
+        readyBoard.removeFromSuperview();
         play_game.call(that);
     });
 }
 function play_game() {
-    var backButton = new ui.ImageView({
-        superview:this,
-        x: 200,
-        y: 15,
-        width: 50,
-        height:50,
-        image: 'resources/images/start.png'
-    });
-    backButton.once('InputSelect', bind(this, function() {
-        this.emit('gamescreen:end');
-    }));
-    buildGun.call(this);
-    buildInitBubbles.call(this);
-    update.call(this);
+    initBubbles.call(this);
+    initTimeBoard.call(this);
 }
 function buildGun() {
     var gun = new Gun();
@@ -85,12 +108,15 @@ function buildGun() {
     });
 }
 
-function update() {
+function checkEachFrame() {
     GC.app.engine.on('Tick', bind(this, function (dt) {
-        if (this._gun && this._gun._bullet) {
+        if (this._gun) {
             var gun = this._gun;
             var bullet = gun._bullet;
+            if(!bullet) return;
+            bullet._pEngine.runTick(500);
             if (bullet._animate.hasFrames()) {
+                bulletParticle.call(this, bullet);
                 bullet.updateAsFlyingBullet();
                 // if hit bubble during loop, it will clear the frame,
                 // when loop finished
@@ -98,7 +124,12 @@ function update() {
                 // when updateNormalBubble may change _bubbles list
                 for(var uid in this._bubbles) {
                     this._bubbles[uid].updateAsNormalBubble(gun);
-                    if (bullet._hit) break;
+                    if (bullet._hit)
+                        break;
+                    if(this._bubbles[uid].style.y > GLOBAL.LOSE_LINE) {
+                        this.emit('app:end', false);
+                        return;
+                    }
                 }
                 if (!bullet._isLoaded) {
                     gun.emit('gun:loaded');
@@ -107,27 +138,36 @@ function update() {
         }
     }));
 }
-function buildInitBubbles() {
-    this._bubbles = {};
-    var r = config.bubble.radius;
-    var r2 = config.bubble.radius2;
-    var types = config.bubble.types;
-    var initColor = Math.floor(Math.random() * 5);
-    var initBubble = new Bullet({superview: this, x: r2, y: r, type: initColor, image: types[initColor]});
-    this._bubbles[initBubble.uid] = initBubble;
+function bulletParticle(bullet) {
+    var particleObjects = bullet._pEngine.obtainParticleArray(10);
+    for (var i = 0; i < 10; i++) {
+        var pObj = particleObjects[i];
+        pObj.dx = Math.random() * 10;
+        pObj.dy = Math.random() * 10;
+        pObj.width = 34;
+        pObj.height = 34;
+        pObj.image = GLOBAL.BULLET_PARTICLE[bullet._type];
+    }
+    bullet._pEngine.emitParticles(particleObjects);
+}
+function initBubbles() {
+    var r = GLOBAL.BUBBLE_RADIUS;
+    var r2 = GLOBAL.BUBBLE_RADIUS2;
+    var types = GLOBAL.TYPES;
     var bias = 5;
     var key = Math.floor(Math.random() * 6) + 1;
     var k = 0;
-    for (var _y = r; _y<= config.globalSize.height * config.initBubbleAreaHeight; _y += 2*r) {
-        for (var _x = r2; _x<= config.globalSize.width - r2 + bias; _x += 3*r2) {
-            var color = (++k == key) ? 5 : Math.floor(Math.random() * 5)
+    for (var _y = r; _y<= GLOBAL.SCREEN_SIZE.height * config.initBubbleAreaHeight; _y += 2*r) {
+        for (var _x = r2; _x<= GLOBAL.SCREEN_SIZE.width - r2 + bias; _x += 3*r2) {
+            var color = (++k == key) ? config.keyType : Math.floor(Math.random() * config.numberOfColor);
+            if (color == config.keyType) this._keyPosition = {x:_x, y:_y};
             var bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
             this._bubbles[bubble.uid] = bubble;
         }
     }
-    for (var _x = 2.5*r2; _x<= config.globalSize.width - 2.5 * r2 + bias; _x += 3*r2) {
-        for (var _y = 2*r; _y<= config.globalSize.height * config.initBubbleAreaHeight; _y += 2*r) {
-            var color = Math.floor(Math.random() * 5);
+    for (var _x = 2.5*r2; _x<= GLOBAL.SCREEN_SIZE.width - 2.5 * r2 + bias; _x += 3*r2) {
+        for (var _y = 2*r; _y<= GLOBAL.SCREEN_SIZE.height * config.initBubbleAreaHeight; _y += 2*r) {
+            var color = Math.floor(Math.random() * config.numberOfColor);
             var bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
             this._bubbles[bubble.uid] = bubble;
         }
@@ -149,6 +189,72 @@ function buildInitBubbles() {
         }
     }
 }
+function initTimeBoard(){
+    var m = 0, s = 0;
+    this._timeBoard = new ui.TextView({
+        superview: this,
+        x: 0,
+        y: 400,
+        width: GLOBAL.SCREEN_SIZE.width,
+        height: 50,
+        autoSize: false,
+        size: 30,
+        verticalAlign: 'middle',
+        horizontalAlign: 'right',
+        wrap: false,
+        color: '#65f9ff',
+        text:'00:00',
+        opacity:0.5,
+        padding:[0,5,0,0]
+    });
+    this._timer = setInterval(bind(this, function() {
+        if(s >= 60) {
+            s = 0;
+            m += 1;
+        }
+        if(m >= 60) {
+            this.emit('app:end');
+        }
+        var _m,_s;
+        _m = (m < 10) ? '0' + m.toString() : m.toString();
+        _s = (s < 10) ? '0' + s.toString() : s.toString();
+        this._timeBoard.setText(_m+':'+_s);
+        s += 1;
+    }), 1000);
+}
+function endGameFlow(isWin) {
+    this._sound.stop('bg_music');
+    var key = new ui.ImageView({
+        superview:this,
+        x :this._keyPosition.x,
+        y :this._keyPosition.y,
+        image:'resources/images/big_key.png',
+        anchorX:0.5,
+        anchorY:0.5,
+        width:1,
+        height:1
+    });
+    var that = this;
+    if(isWin)
+        animate(key).now({scale:300, x:GLOBAL.SCREEN_SIZE.width/2,
+            y:GLOBAL.SCREEN_SIZE.width/2}, 1500).then(function(){
+                key.removeFromSuperview();
+                resetGame.call(that);
+                that.emit('gamescreen:end', that._timeBoard.getText());
+            }
+        )
+    else {
+        that.emit('gamescreen:end', false);
+        resetGame.call(that);
+    }
+}
 
-
+function resetGame() {
+    clearInterval(this._timer);
+    this._timeBoard.removeFromSuperview();
+    for(var i in this._bubbles) {
+        this._bubbles[i].removeFromSuperview();
+    }
+    this._bubbles = {};
+}
 

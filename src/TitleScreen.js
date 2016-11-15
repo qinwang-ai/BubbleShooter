@@ -1,6 +1,7 @@
 import ui.View;
 import ui.ImageView;
 import animate;
+import src.SoundController as Sound;
 exports = Class(ui.ImageView, function(supr){
     this.init = function(opts) {
         opts = merge(opts, {
@@ -9,6 +10,8 @@ exports = Class(ui.ImageView, function(supr){
             image: 'resources/images/menu.jpg',
         });
         supr(this, 'init', [opts]);
+        this._sound = Sound.getSound();
+        this._sound.play('main_music');
         this.build();
     }
     this.build = function() {

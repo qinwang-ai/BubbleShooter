@@ -1,0 +1,3 @@
+2056592198907aba73215ecd56cab424
+jsio("import squill.Widget");jsio("import squill.models.bindings as bindings");var Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_Image=__class__;
+exports=Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_Image(function(){return this.init&&this.init.apply(this,arguments)},squill.Widget,function(){this._css="image";this._def={tag:"img"};this.buildWidget=function(){var a=this._opts;a.format&&bindings.parseFormat(this,a.format)};Object.defineProperty(this,"src",{set:function(a){this._el.src=a},get:function(){return this._el.src}});this.setData=this.setSrc=function(a){this.src=a}});

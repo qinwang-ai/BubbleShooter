@@ -1,0 +1,2 @@
+3863cdb2691ec2b9920e028233e356bf
+jsio("from util.browser import $");jsio("import .Widget");jsio("import .TextInput");var Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_TextArea=__class__,TextArea=exports=Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_TextArea(function(){return this.init&&this.init.apply(this,arguments)},TextInput,function(){this._tag="textarea"});Widget.register(TextArea,"TextArea");

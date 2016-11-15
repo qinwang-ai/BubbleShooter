@@ -3,38 +3,39 @@ import device;
 import ui.StackView as StackView;
 import src.TitleScreen as TitleScreen;
 import src.GameScreen as GameScreen;
-import src.SoundController as Sound;
+import src.GameOverScreen as GameOverScreen;
 import src.Config as config;
+import src.SoundController as Sound;
 
 exports = Class(GC.Application, function () {
 
   this.initUI = function () {
       var titleScreen = new TitleScreen(),
+          gameOverScreen = new GameOverScreen(),
           gameScreen = new GameScreen(),
-            sound = Sound.getSound(),
           rootView = new StackView({
               superview:this,
               x:0,
               y:0,
-              width:config.globalSize.width,
-              height:680,
+              width:GLOBAL.SCREEN_SIZE.width,
+              height:GLOBAL.SCREEN_SIZE.height,
               clip:true,
-              scale:device.width / config.globalSize.width
+              scale:device.width / GLOBAL.SCREEN_SIZE.width
           });
       rootView.push(titleScreen);
-      sound.play('main_music');
       titleScreen.on("titlescreen:start", function() {
-          sound.stop('main_music');
           rootView.push(gameScreen);
           gameScreen.emit('app:start');
       });
-      gameScreen.on('gamescreen:end', function() {
-          sound.stop('bg_music');
-          rootView.pop();
-          sound.play('main_music');
+      gameScreen.on('gamescreen:end', function(score) {
+          rootView.push(gameOverScreen);
+          gameOverScreen.emit('gameoverscreen:score', score);
       });
-
+      gameOverScreen.on('InputSelect', function(){
+          rootView.pop();
+          rootView.pop();
+          (Sound.getSound()).play('main_music');
+      });
   };
-  this.launchUI = function () {
-  };
+  this.launchUI = function () {};
 });

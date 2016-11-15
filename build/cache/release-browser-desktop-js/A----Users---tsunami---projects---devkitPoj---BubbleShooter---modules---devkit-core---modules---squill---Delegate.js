@@ -1,0 +1,3 @@
+537140b6df3f1cd8a71c99ea45bfc21d
+var SLICE=Array.prototype.slice,Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_Delegate=__class__,Delegate=exports=Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_Delegate(function(){return this.init&&this.init.apply(this,arguments)},function(){this.init=function(a){a&&a(this)};this.extend=function(a){a=new Delegate(a);a.parent=this;return a};this.call=function(a,b){if(this[b])return this[b].apply(a,SLICE.call(arguments,2));if(this.parent)return this.parent.apply(a,
+SLICE.call(arguments,1))};this.apply=function(a,b){this.call.apply(this,[a].concat(SLICE.call(b)))}});

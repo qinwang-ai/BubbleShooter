@@ -6,13 +6,13 @@ import src.Config as config;
 exports = Class(ui.ImageView, function(supr){
     this.init = function(opts) {
         opts = merge(opts, {
-            x: config.globalSize.width/2 - 53,
-            y: 500,
+            x: GLOBAL.SCREEN_SIZE.width/2 - 53,
+            y: 420,
             autoSize:true,
             image: 'resources/images/gun_base.png'
         });
         supr(this, 'init', [opts]);
-        this._color = Math.floor(Math.random()*6);
+        this._color = Math.floor(Math.random()*5);
         this.build();
     }
     this.build = function() {
@@ -68,4 +68,4 @@ exports = Class(ui.ImageView, function(supr){
         });
     }
 });
-var types = config.bubble.types;
+var types = GLOBAL.TYPES;

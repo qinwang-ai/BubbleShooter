@@ -3,11 +3,12 @@ import math.geom.Point as Point;
 import animate;
 import src.Config as config;
 import src.SoundController as Sound;
+import ui.ParticleEngine as ParticleEngine;
 exports = Class(ui.ImageView, function(supr){
         this.init = function(opts) {
             opts = merge(opts, {
                 x:165,
-                y:527,
+                y:450,
                 width: 2*r,
                 height:2*r,
                 offsetX:-r,
@@ -16,14 +17,18 @@ exports = Class(ui.ImageView, function(supr){
                 type:0
             });
             supr(this, 'init', [opts]);
-            this._deviceWidth = config.globalSize.width;
-            this._magnLength = 1000;
-            this._delay = 1000;
+            this._deviceWidth = GLOBAL.SCREEN_SIZE.width;
+            this._magnLength = config.bulletMagnLength;
+            this._delay = config.bulletSpeedDelay;
             this._sound = Sound.getSound();
             this._origin = new Point(this.style.x, this.style.y);
             this._type = opts.type;
             this._hit = false;
             this._edges = [];
+            this._pEngine = new ParticleEngine({
+                superview: this
+            });
+
             this.build();
         }
         this.build = function() {
@@ -73,10 +78,6 @@ exports = Class(ui.ImageView, function(supr){
             if (distance <= r * 2) {
                 // stop
                 bullet._animate.clear();
-                if (this._type == config.keyType) {
-                    this.getSuperview().emit('gamescreen:end', 0);
-                    return;
-                }
                 // adjust position
                 this.deployBulletAfterHit(v1.getAngle(), bullet);
                 this._sound.play('attack');
@@ -85,22 +86,34 @@ exports = Class(ui.ImageView, function(supr){
             }
         };
         this.searchOverlapBubble = function (bullet) {
-            var bubbles = this.getSuperview()._bubbles;
+            var superview = this.getSuperview();
+            var bubbles = superview._bubbles, findTheKey = false;
             for(var i in bubbles){
                 var v1 = new Point(bullet.style.x, bullet.style.y);
                 var v2 = new Point(bubbles[i].style.x, bubbles[i].style.y);
                 var distance = (v1.subtract(v2)).getMagnitude();
                 if (distance <= r * 2 + config.bias) {
+                    if (bubbles[i]._type == config.keyType) {
+                        findTheKey = true;
+                    }
                     bullet._edges[i] = bubbles[i];
                     bubbles[i]._edges[bullet.uid] = bullet;
                 }
             }
             bubbles[bullet.uid] = bullet;
+            if(findTheKey) {
+                setTimeout(bind(this, function(){
+                    this.getSuperview().emit('app:end', true);
+                }), 300);
+                return;
+            }
             var removeList = this.checkRemoveBFS(bullet);
             if (removeList.length >= 3) {
                 setTimeout(bind(this,function(){
                     this.removeBubbles(removeList, bubbles);
-                    setTimeout(bind(this,function(){this.removeSuspendBubble(bubbles)}), 500);
+                    setTimeout(bind(this,function(){
+                        this.removeSuspendBubble(bubbles);
+                    }), 400);
                 }), 400);
             }
         }
@@ -115,7 +128,7 @@ exports = Class(ui.ImageView, function(supr){
                 removeList.push(n);
                 for (var i in n._edges) {
                     var o = n._edges[i];
-                    if ((o._type == n._type) && flag[o.uid] == undefined) {
+                    if ((o._type == n._type) && !flag[o.uid]) {
                         tail += 1;
                         queue.push(o);
                     }
@@ -131,24 +144,32 @@ exports = Class(ui.ImageView, function(supr){
                 }
             }
             if (removeList.length > 0){
-                this.removeBubbles(removeList, bubbles);
+                this.removeBubbles(removeList, bubbles, true);
             }
         };
-        this.removeBubbles = function (bubbleList, bubbles){
-            for (var i = 0;i < bubbleList.length;i ++) {
-                var o = bubbleList[i];
+        this.removeBubbles = function (removeList, bubbles, isSuspend){
+            var gameScreen = removeList[0].getSuperview();
+            for (var i = 0;i < removeList.length;i ++) {
+                var o = removeList[i];
                 // remove this object from other bubbles
                 for (var j in o._edges) {
                     var other = o._edges[j];
                     delete(other._edges[o.uid]);
                 }
+                // remove from global bubbles list
                 delete(bubbles[o.uid]);
                 o.removeFromSuperview();
             }
             this._sound.play('bubble_xiaochu');
-            if (bubbleList.length >=3){
+            if (!isSuspend){
                 setTimeout(bind(this, function(){
-                    this._sound.play(admire[Math.floor(Math.random()*3)]);
+                    var ad = admire[Math.floor(Math.random()*3)];
+                    this._sound.play(ad);
+                    if(ad == 'perfect') ad = gameScreen._perfect;
+                    else if(ad == 'great') ad = gameScreen._great;
+                        else if(ad == 'nice') ad = gameScreen._nice;
+                    ad.show();
+                    setTimeout(function(){ad.hide()},500);
                 }), 600);
             }
         }
@@ -164,7 +185,7 @@ exports = Class(ui.ImageView, function(supr){
                 for (var i in n._edges) {
                     var o = n._edges[i];
                     if (o.style.y <= r) return true;
-                    if (flag[o.uid] == undefined) {
+                    if (!flag[o.uid]) {
                         tail += 1;
                         queue.push(o);
                     }
@@ -182,6 +203,7 @@ exports = Class(ui.ImageView, function(supr){
                     break;
                 }
             }
+
         };
         this.magnitudeLength = function (target) {
             var origin = this._origin;
@@ -193,9 +215,9 @@ exports = Class(ui.ImageView, function(supr){
         }
 });
 
-var r = config.bubble.radius;
-var r2 = config.bubble.radius2;
-var types = config.bubble.types;
+var r = GLOBAL.BUBBLE_RADIUS;
+var r2 = GLOBAL.BUBBLE_RADIUS2;
+var types = GLOBAL.TYPES;
 var Hexagon = config.Hexagon;
 var Edge = config.Edge;
 var admire = [
@@ -203,4 +225,3 @@ var admire = [
     'nice',
     'great'
 ];
-

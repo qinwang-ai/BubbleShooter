@@ -1,0 +1,3 @@
+166e4d8027dcb4ce615916147f45f555
+jsio("import .Widget");jsio("from util.browser import $");var Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_VerticalCenter=__class__;
+exports=Users_tsunami_projects_devkitPoj_BubbleShooter_modules_devkit_core_modules_squill_VerticalCenter(function(){return this.init&&this.init.apply(this,arguments)},Widget,function(){this._def={tag:"table",style:merge({height:"100%",width:"100%"},def.style),attrs:{cellpadding:0,cellspacing:0},children:[$({tag:"tbody",children:[$({tag:"tr",children:[$({id:"contentPane",tag:"td",attrs:{valign:"middle"},style:{verticalAlign:"middle"}})]})]})]};this.addElement=function(){this.contentPane.appendChild(el)}});
