@@ -89,11 +89,11 @@ exports = Class(ui.ImageView, function(supr){
             var particleObjects = this._pEngine.obtainParticleArray(5);
             for (var i = 0; i < 5; i++) {
                 var pObj = particleObjects[i];
-                pObj.dx = Math.random() * 120 - 34;
-                pObj.dy = Math.random() * 120 - 34;
-                pObj.width = 10;
-                pObj.height = 10;
-                pObj.image = 'resources/images/spark.png';
+                pObj.dx = Math.random() * 40 - 20;
+                pObj.dy = Math.random() * 40 - 20;
+                pObj.width = 40;
+                pObj.height = 40;
+                pObj.image = 'resources/images/bomb.png';
             }
             this._pEngine.emitParticles(particleObjects);
         }

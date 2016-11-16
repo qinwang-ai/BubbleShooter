@@ -45,6 +45,7 @@ exports = Class(ui.ImageView, function(supr){
         });
 
         var that = this;
+        var gameScreen = that.getSuperview();
         this.on('gun:setTarget', function(p) {
             var target = p.subtract(new Point(145, 510));
             var r = -1.57079 - target.getAngle();
@@ -54,7 +55,7 @@ exports = Class(ui.ImageView, function(supr){
             animate(nextBullet).now({x:230, y:140}, 200, animate.linear)
                 .then(function() {
                     var bullet = new Bullet({type:that._color, image:types[that._color]});
-                    that.getSuperview().addSubview(bullet);
+                    gameScreen.addSubview(bullet);
                     that._bullet = bullet;
                     bullet._isLoaded = true;
                     that._color = Math.floor(Math.random()*5);
@@ -62,9 +63,9 @@ exports = Class(ui.ImageView, function(supr){
                 });
         });
         this.on('gun:fire', function(p) {
-            var isRemoving = that.getSuperview()._isRemoving;
-            console.log(isRemoving)
-            if (that._bullet._isLoaded && p.y < that._bullet.style.y && !isRemoving) {
+            var isRemoving = gameScreen._isRemoving;
+            if (gameScreen._gameStart && that._bullet && that._bullet._isLoaded
+                && p.y < that._bullet.style.y && !isRemoving) {
                 that._bullet.emit('bullet:launch', p);
             }
         });

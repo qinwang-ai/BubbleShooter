@@ -28,13 +28,13 @@ exports = Class(GC.Application, function () {
           gameScreen.emit('app:start');
       });
       gameScreen.on('gamescreen:end', function(score) {
+          rootView.pop();
           rootView.push(gameOverScreen);
           gameOverScreen.emit('gameoverscreen:score', score);
       });
       gameOverScreen.on('InputSelect', function(){
-          rootView.pop();
-          rootView.pop();
           (Sound.getSound()).play('main_music');
+          rootView.pop();
       });
   };
   this.launchUI = function () {};

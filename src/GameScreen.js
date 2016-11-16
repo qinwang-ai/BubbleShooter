@@ -28,6 +28,7 @@ exports = Class(ui.ImageView, function(supr){
         this._timeBoard = null;
         this._keyPosition = null;
         this._isRemoving = false;
+        this._gameStart = false;
         this.build();
     }
     this.build = function() {
@@ -93,14 +94,14 @@ function startGameFlow () {
     });
 }
 function play_game() {
+    this._gun.emit('gun:loaded');
     initBubbles.call(this);
     initTimeBoard.call(this);
+    this._gameStart = true;
 }
 function buildGun() {
-    var gun = new Gun();
+    var gun = new Gun({superview:this});
     this._gun = gun;
-    this.addSubview(gun);
-    gun.emit('gun:loaded');
     this.on('InputMove', function(e, p) {
         gun.emit('gun:setTarget', p);
     });
@@ -111,7 +112,7 @@ function buildGun() {
 
 function checkEachFrame() {
     GC.app.engine.on('Tick', bind(this, function (dt) {
-        if (this._gun) {
+        if (this._gun && this._gameStart) {
             var gun = this._gun;
             var bullet = gun._bullet;
             if(!bullet) return;
@@ -190,16 +191,15 @@ function initTimeBoard(){
         x: 0,
         y: 400,
         width: GLOBAL.SCREEN_SIZE.width,
-        height: 50,
+        height: 20,
         autoSize: false,
-        size: 30,
         verticalAlign: 'middle',
         horizontalAlign: 'right',
         wrap: false,
         color: '#65f9ff',
         text:'00:00',
         opacity:0.5,
-        padding:[0,5,0,0]
+        padding:[0,14,0,0]
     });
     this._timer = setInterval(bind(this, function() {
         if(s >= 60) {
@@ -218,6 +218,7 @@ function initTimeBoard(){
 }
 function endGameFlow(isWin) {
     this._sound.stop('bg_music');
+    this._gameStart = false;
     var key = new ui.ImageView({
         superview:this,
         x :this._keyPosition.x,
