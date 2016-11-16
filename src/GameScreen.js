@@ -27,6 +27,7 @@ exports = Class(ui.ImageView, function(supr){
         this._gun = null;
         this._timeBoard = null;
         this._keyPosition = null;
+        this._isRemoving = false;
         this.build();
     }
     this.build = function() {
@@ -114,15 +115,16 @@ function checkEachFrame() {
             var gun = this._gun;
             var bullet = gun._bullet;
             if(!bullet) return;
-            bullet._pEngine.runTick(500);
             if (bullet._animate.hasFrames()) {
-                bulletParticle.call(this, bullet);
+                bullet.bulletParticle();
                 bullet.updateAsFlyingBullet();
                 // if hit bubble during loop, it will clear the frame,
                 // when loop finished
                 // tick can't access here, because has no frames
                 // when updateNormalBubble may change _bubbles list
                 for(var uid in this._bubbles) {
+//                    this._bubbles[uid]._pEngine.runTick(500);
+  //                  bulletParticle.call(this, this._bubbles[uid]);
                     this._bubbles[uid].updateAsNormalBubble(gun);
                     if (bullet._hit)
                         break;
@@ -135,21 +137,13 @@ function checkEachFrame() {
                     gun.emit('gun:loaded');
                 }
             }
+            for(var uid in this._bubbles) {
+               this._bubbles[uid].updateParticle();
+            }
         }
     }));
 }
-function bulletParticle(bullet) {
-    var particleObjects = bullet._pEngine.obtainParticleArray(10);
-    for (var i = 0; i < 10; i++) {
-        var pObj = particleObjects[i];
-        pObj.dx = Math.random() * 10;
-        pObj.dy = Math.random() * 10;
-        pObj.width = 34;
-        pObj.height = 34;
-        pObj.image = GLOBAL.BULLET_PARTICLE[bullet._type];
-    }
-    bullet._pEngine.emitParticles(particleObjects);
-}
+
 function initBubbles() {
     var r = GLOBAL.BUBBLE_RADIUS;
     var r2 = GLOBAL.BUBBLE_RADIUS2;

@@ -24,10 +24,10 @@ exports = Class(ui.ImageView, function(supr){
             this._origin = new Point(this.style.x, this.style.y);
             this._type = opts.type;
             this._hit = false;
+            this._shock = false;
+            this._spark = false;
             this._edges = [];
-            this._pEngine = new ParticleEngine({
-                superview: this
-            });
+            this._pEngine = new ParticleEngine({superview: this});
 
             this.build();
         }
@@ -56,7 +56,47 @@ exports = Class(ui.ImageView, function(supr){
                     this._animate.clear().now({x: target.x, y: target.y}, delay, animate.linear);
                 }
             }));
+
         };
+        // update every frame invoke by gamescreen's update
+        this.updateParticle = function () {
+            if(this._shock) {
+                this.bulletParticle();
+            }
+            if(this._spark) {
+                this.bulletSpark();
+            }
+            this._pEngine.runTick(500);
+        };
+        this.bulletParticle = function() {
+            var particleObjects = this._pEngine.obtainParticleArray(10);
+            for (var i = 0; i < 10; i++) {
+                var pObj = particleObjects[i];
+                pObj.dx = Math.random() * 10;
+                pObj.width = 33;
+                pObj.height = 33;
+                if(this._animate.hasFrames()){
+                    pObj.dy = Math.random() * 10;
+                    pObj.image = GLOBAL.BULLET_PARTICLE[this._type];
+                } else{
+                    pObj.dy = -Math.random() * 10;
+                    pObj.image = GLOBAL.TYPES[this._type];
+                }
+            }
+            this._pEngine.emitParticles(particleObjects);
+        }
+        this.bulletSpark = function() {
+            var particleObjects = this._pEngine.obtainParticleArray(5);
+            for (var i = 0; i < 5; i++) {
+                var pObj = particleObjects[i];
+                pObj.dx = Math.random() * 120 - 34;
+                pObj.dy = Math.random() * 120 - 34;
+                pObj.width = 10;
+                pObj.height = 10;
+                pObj.image = 'resources/images/spark.png';
+            }
+            this._pEngine.emitParticles(particleObjects);
+        }
         this.updateAsFlyingBullet = function() {
             if (this.style.y > 0) {
                 if(this.style.x <= r) {
@@ -85,6 +125,19 @@ exports = Class(ui.ImageView, function(supr){
                 this.searchOverlapBubble(bullet);
             }
         };
+        this.shock = function() {
+            var that = this;
+            that._shock = true;
+            setTimeout(function(){that._shock = false}, 200);
+        }
+        this.spark = function() {
+            var that = this;
+            that._spark = true;
+            this._sound.play('bubble_xiaochu');
+            setTimeout(function(){
+                that._spark = false;
+            }, 200);
+        }
         this.searchOverlapBubble = function (bullet) {
             var superview = this.getSuperview();
             var bubbles = superview._bubbles, findTheKey = false;
@@ -95,9 +148,11 @@ exports = Class(ui.ImageView, function(supr){
                 if (distance <= r * 2 + config.bias) {
                     if (bubbles[i]._type == config.keyType) {
                         findTheKey = true;
+                        break;
                     }
                     bullet._edges[i] = bubbles[i];
                     bubbles[i]._edges[bullet.uid] = bullet;
+                    bubbles[i].shock();
                 }
             }
             bubbles[bullet.uid] = bullet;
@@ -149,6 +204,7 @@ exports = Class(ui.ImageView, function(supr){
         };
         this.removeBubbles = function (removeList, bubbles, isSuspend){
             var gameScreen = removeList[0].getSuperview();
+            gameScreen._isRemoving = true;
             for (var i = 0;i < removeList.length;i ++) {
                 var o = removeList[i];
                 // remove this object from other bubbles
@@ -157,10 +213,19 @@ exports = Class(ui.ImageView, function(supr){
                     delete(other._edges[o.uid]);
                 }
                 // remove from global bubbles list
-                delete(bubbles[o.uid]);
-                o.removeFromSuperview();
+                o.spark();
             }
-            this._sound.play('bubble_xiaochu');
+            // after play spark frames
+            setTimeout(function() {
+                for (var i = 0;i < removeList.length;i ++) {
+                    var o = removeList[i];
+                    o.removeFromSuperview();
+                    delete(bubbles[o.uid]);
+                }
+                var _gameScreen = gameScreen;
+                setTimeout(function(){_gameScreen._isRemoving = false},200);
+            }, 300);
+
             if (!isSuspend){
                 setTimeout(bind(this, function(){
                     var ad = admire[Math.floor(Math.random()*3)];
@@ -179,7 +244,7 @@ exports = Class(ui.ImageView, function(supr){
             if (b.style.y <= r) return true;
             while(head<=tail) {
                 var n = queue[head];
-                flag[n.uid] = true;
+               flag[n.uid] = true;
                 head += 1;
                 removeList.push(n);
                 for (var i in n._edges) {

@@ -92,7 +92,7 @@ exports = Class(ui.ImageView, function(supr){
             wrap: false,
             color: '#fff',
             opacity:1,
-            text:'Go On'
+            text:'Click to Go On'
         });
         this._pEngine = new ParticleEngine({
             superview: this

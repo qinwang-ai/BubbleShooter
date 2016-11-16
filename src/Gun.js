@@ -62,7 +62,9 @@ exports = Class(ui.ImageView, function(supr){
                 });
         });
         this.on('gun:fire', function(p) {
-            if (that._bullet._isLoaded && p.y < that._bullet.style.y) {
+            var isRemoving = that.getSuperview()._isRemoving;
+            console.log(isRemoving)
+            if (that._bullet._isLoaded && p.y < that._bullet.style.y && !isRemoving) {
                 that._bullet.emit('bullet:launch', p);
             }
         });
