@@ -2,47 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="892706aa-9501-4ee9-8142-3e1c1a3e457b" name="Default" comment="kkk">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/images/score_girl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/images/title_screen.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/background_1.jpg" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/background_1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/background_4.jpg" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/background_4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/lightning.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/lightning.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/resources/images/perfect.png" afterPath="$PROJECT_DIR$/build/debug/simulator/resources/images/perfect.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images1.png" afterPath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images2.png" afterPath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images3.png" afterPath="$PROJECT_DIR$/build/release/browser-desktop/spritesheets/resources-images3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images1.png" afterPath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images2.png" afterPath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images3.png" afterPath="$PROJECT_DIR$/build/release/browser-mobile/spritesheets/resources-images3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/background_1.jpg" afterPath="$PROJECT_DIR$/resources/images/background_1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/background_4.jpg" afterPath="$PROJECT_DIR$/resources/images/background_4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/perfect.png" afterPath="$PROJECT_DIR$/resources/images/perfect.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-devkit-spriter" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-devkit-spriter" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-image-compress" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-image-compress" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Application.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Bullet.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Bullet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Config.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Gun.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Gun.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-devkit-spriter" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-devkit-spriter" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-image-compress" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-image-compress" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Application.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Bullet.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Bullet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Config.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Gun.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---Gun.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/index.html" afterPath="$PROJECT_DIR$/build/debug/simulator/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" afterPath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/spritesheets/spritesheetSizeMap.json" afterPath="$PROJECT_DIR$/build/debug/simulator/spritesheets/spritesheetSizeMap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/browser-desktop.js" afterPath="$PROJECT_DIR$/build/release/browser-desktop/browser-desktop.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/index.html" afterPath="$PROJECT_DIR$/build/release/browser-desktop/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-mobile/browser-mobile.js" afterPath="$PROJECT_DIR$/build/release/browser-mobile/browser-mobile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application.js" afterPath="$PROJECT_DIR$/src/Application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bullet.js" afterPath="$PROJECT_DIR$/src/Bullet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Config.js" afterPath="$PROJECT_DIR$/src/Config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameScreen.js" afterPath="$PROJECT_DIR$/src/GameScreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gun.js" afterPath="$PROJECT_DIR$/src/Gun.js" />
     </list>
     <ignored path="BubbleShooter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +38,8 @@
       <file leaf-file-name="GameScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+            <state relative-caret-position="280">
+              <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#102#117#0" expanded="true" />
@@ -78,12 +48,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoundController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SoundController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SoundController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="196">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bullet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Bullet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+              <folding>
+                <element signature="e#54#69#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,18 +73,18 @@
       <file leaf-file-name="GameOverScreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameOverScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state relative-caret-position="616">
+              <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="390">
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -111,8 +93,8 @@
       <file leaf-file-name="Gun.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gun.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+            <state relative-caret-position="84">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,18 +106,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bullet.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bullet.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1036">
-              <caret line="133" column="27" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
-              <folding>
-                <element signature="e#54#69#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -167,10 +137,10 @@
         <option value="$PROJECT_DIR$/src/TitleScreen.js" />
         <option value="$PROJECT_DIR$/src/Gun.js" />
         <option value="$PROJECT_DIR$/src/Application.js" />
-        <option value="$PROJECT_DIR$/src/Config.js" />
-        <option value="$PROJECT_DIR$/src/Bullet.js" />
         <option value="$PROJECT_DIR$/src/GameOverScreen.js" />
+        <option value="$PROJECT_DIR$/src/Bullet.js" />
         <option value="$PROJECT_DIR$/src/GameScreen.js" />
+        <option value="$PROJECT_DIR$/src/Config.js" />
       </list>
     </option>
   </component>
@@ -185,10 +155,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="156" />
-    <option name="y" value="-1400" />
-    <option name="width" value="1050" />
-    <option name="height" value="1400" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -371,21 +339,21 @@
       <workItem from="1478936683887" duration="59869000" />
       <workItem from="1479043975361" duration="113660000" />
       <workItem from="1479279356046" duration="278000" />
-      <workItem from="1479281695427" duration="9253000" />
+      <workItem from="1479281695427" duration="13850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183060000" />
+    <option name="totallyTimeSpent" value="187657000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="156" y="-1400" width="1050" height="1400" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26239067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2007435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18721804" sideWeight="0.50340134" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16616541" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31661892" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09689677" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -552,14 +520,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bubble.js" />
-    <entry file="file://$PROJECT_DIR$/src/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -568,44 +528,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bullet.js">
+    <entry file="file://$PROJECT_DIR$/src/SoundController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="133" column="27" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
-          <folding>
-            <element signature="e#54#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gun.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="196">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Config.js">
+    <entry file="file://$PROJECT_DIR$/src/Application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameOverScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="616">
+          <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gun.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bullet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+          <folding>
+            <element signature="e#54#69#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+        <state relative-caret-position="280">
+          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#102#117#0" expanded="true" />
@@ -613,10 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SoundController.js">
+    <entry file="file://$PROJECT_DIR$/src/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>

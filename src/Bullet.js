@@ -107,7 +107,6 @@ exports = Class(ui.ImageView, function(supr){
                 }
             } else {
                 this._animate.clear();
-                this.removeFromSuperview();
             }
         };
         this.updateAsNormalBubble = function(gun) {
@@ -158,12 +157,14 @@ exports = Class(ui.ImageView, function(supr){
             bubbles[bullet.uid] = bullet;
             if(findTheKey) {
                 setTimeout(bind(this, function(){
-                    this.getSuperview().emit('app:end', true);
+                    superview.emit('app:end', true);
                 }), 300);
                 return;
             }
             var removeList = this.checkRemoveBFS(bullet);
             if (removeList.length >= 3) {
+                // startRemove
+                superview._isRemoving = true;
                 setTimeout(bind(this,function(){
                     this.removeBubbles(removeList, bubbles);
                     setTimeout(bind(this,function(){
@@ -204,7 +205,6 @@ exports = Class(ui.ImageView, function(supr){
         };
         this.removeBubbles = function (removeList, bubbles, isSuspend){
             var gameScreen = removeList[0].getSuperview();
-            gameScreen._isRemoving = true;
             for (var i = 0;i < removeList.length;i ++) {
                 var o = removeList[i];
                 // remove this object from other bubbles
@@ -222,8 +222,7 @@ exports = Class(ui.ImageView, function(supr){
                     o.removeFromSuperview();
                     delete(bubbles[o.uid]);
                 }
-                var _gameScreen = gameScreen;
-                setTimeout(function(){_gameScreen._isRemoving = false},200);
+                gameScreen._isRemoving = false;
             }, 300);
 
             if (!isSuspend){

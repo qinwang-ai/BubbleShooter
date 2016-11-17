@@ -152,11 +152,17 @@ function initBubbles() {
     var bias = 5;
     var key = Math.floor(Math.random() * 6) + 1;
     var k = 0;
-    for (var _y = r; _y<= GLOBAL.SCREEN_SIZE.height * config.initBubbleAreaHeight; _y += 2*r) {
+    for (var _y = -r; _y<= GLOBAL.SCREEN_SIZE.height * config.initBubbleAreaHeight; _y += 2*r) {
         for (var _x = r2; _x<= GLOBAL.SCREEN_SIZE.width - r2 + bias; _x += 3*r2) {
-            var color = (++k == key) ? config.keyType : Math.floor(Math.random() * config.numberOfColor);
-            if (color == config.keyType) this._keyPosition = {x:_x, y:_y};
-            var bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
+            var bubble;
+            if(_y == -r) {
+                // prevent bullet out the screen
+                bubble = new Bullet({superview: this, x: _x, y: _y, type: -1, image: ""});
+            } else {
+                var color = (++k == key) ? config.keyType : Math.floor(Math.random() * config.numberOfColor);
+                if (color == config.keyType) this._keyPosition = {x:_x, y:_y};
+                bubble = new Bullet({superview: this, x: _x, y: _y, type: color, image: types[color]});
+            }
             this._bubbles[bubble.uid] = bubble;
         }
     }
@@ -217,8 +223,8 @@ function initTimeBoard(){
     }), 1000);
 }
 function endGameFlow(isWin) {
-    this._sound.stop('bg_music');
     this._gameStart = false;
+    this._sound.stop('bg_music');
     var key = new ui.ImageView({
         superview:this,
         x :this._keyPosition.x,
@@ -251,5 +257,8 @@ function resetGame() {
         this._bubbles[i].removeFromSuperview();
     }
     this._bubbles = {};
+    if(this._gun._bullet) {
+        this._gun._bullet.removeFromSuperview();
+    }
 }
 
