@@ -264,6 +264,9 @@ exports = Class(ui.ImageView, function(supr){
                     bullet.style.x = t.x + Edge[i].dx;
                     bullet.style.y = t.y + Edge[i].dy;
                     mini = i;
+//                    if (bullet.style.y < config.bias) {
+  //                      bullet.hide();
+    //                }
                     break;
                 }
             }
