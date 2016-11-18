@@ -126,6 +126,7 @@ function checkEachFrame() {
                 for(var uid in this._bubbles) {
 //                    this._bubbles[uid]._pEngine.runTick(500);
   //                  bulletParticle.call(this, this._bubbles[uid]);
+                    if(Object.keys(this._bubbles[uid]._edges).length == 6) continue;
                     this._bubbles[uid].updateAsNormalBubble(gun);
                     if (bullet._hit)
                         break;

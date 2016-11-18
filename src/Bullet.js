@@ -26,7 +26,7 @@ exports = Class(ui.ImageView, function(supr){
             this._hit = false;
             this._shock = false;
             this._spark = false;
-            this._edges = [];
+            this._edges = {};
             this._pEngine = new ParticleEngine({superview: this});
 
             this.build();
