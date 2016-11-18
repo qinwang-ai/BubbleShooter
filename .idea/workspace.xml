@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="892706aa-9501-4ee9-8142-3e1c1a3e457b" name="Default" comment="kkk">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/index.html" afterPath="$PROJECT_DIR$/build/debug/simulator/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-desktop-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" afterPath="$PROJECT_DIR$/build/cache/release-browser-mobile-js/A----Users---tsunami---projects---devkitPoj---BubbleShooter---src---GameScreen.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" afterPath="$PROJECT_DIR$/build/debug/simulator/native-ios.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-desktop/browser-desktop.js" afterPath="$PROJECT_DIR$/build/release/browser-desktop/browser-desktop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/release/browser-mobile/browser-mobile.js" afterPath="$PROJECT_DIR$/build/release/browser-mobile/browser-mobile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameScreen.js" afterPath="$PROJECT_DIR$/src/GameScreen.js" />
     </list>
     <ignored path="BubbleShooter.iws" />
@@ -31,8 +34,8 @@
       <file leaf-file-name="GameScreen.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="136" column="16" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+            <state relative-caret-position="85">
+              <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#102#117#0" expanded="true" />
@@ -324,12 +327,12 @@
       <workItem from="1479279356046" duration="278000" />
       <workItem from="1479281695427" duration="14334000" />
       <workItem from="1479367020588" duration="255000" />
-      <workItem from="1479444763876" duration="2078000" />
+      <workItem from="1479444763876" duration="2633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190474000" />
+    <option name="totallyTimeSpent" value="191029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
@@ -662,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="136" column="16" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+        <state relative-caret-position="85">
+          <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#102#117#0" expanded="true" />

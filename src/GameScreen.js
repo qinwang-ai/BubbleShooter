@@ -126,14 +126,15 @@ function checkEachFrame() {
                 for(var uid in this._bubbles) {
 //                    this._bubbles[uid]._pEngine.runTick(500);
   //                  bulletParticle.call(this, this._bubbles[uid]);
+                    console.log(Object.keys(this._bubbles[uid]._edges).length)
                     if(Object.keys(this._bubbles[uid]._edges).length == 6) continue;
                     this._bubbles[uid].updateAsNormalBubble(gun);
                     if (bullet._hit)
                         break;
-                }
-                if(bullet._hit && bullet.style.y > GLOBAL.LOSE_LINE) {
-                    this.emit('app:end', false);
-                    return;
+                    if(this._bubbles[uid].style.y > GLOBAL.LOSE_LINE) {
+                        this.emit('app:end', false);
+                        return;
+                    }
                 }
                 if (!bullet._isLoaded) {
                     gun.emit('gun:loaded');
